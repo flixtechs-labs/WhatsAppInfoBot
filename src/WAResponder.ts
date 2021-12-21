@@ -1,5 +1,5 @@
 import { Answer, InputContext, LanguageProcessor, WAResponderParameters } from "./types"
-import type { WAMessage, WAChatUpdate, proto } from '@adiwajshing/baileys'
+import { MessageType, WAMessage, WAChatUpdate, proto } from '@adiwajshing/baileys'
 
 // file contains generic code to build a WA responder
 
@@ -85,7 +85,7 @@ export const onWAMessage = async(
 				context: ctx,
 				reply: response,
 			})
-			await sendMessage(ctx.userId, response, message)
+			await sendMessage(ctx.userId, response, MessageType.text)
 		}
 	}
 }
